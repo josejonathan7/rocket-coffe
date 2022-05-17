@@ -1,0 +1,64 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: #FFF;
+
+	h1 {
+		margin: 5rem 0;
+		text-align: center;
+		width: 70%;
+		font-size: 3rem;
+
+	}
+}
+
+.button {
+	background-color: transparent;
+	border-radius: 0.8rem;
+	border: 1px solid #8257E5;
+	width: 40%;
+	height: 3.7rem;
+	font-size: 1.4rem;
+	margin: 5rem 0;
+
+	color: inherit;
+	transition: 0.3s;
+
+	&:hover {
+		cursor: pointer;
+		filter: brightness(0.8);
+		width: 45%;
+		height: 4rem;
+	}
+}
+
+.title {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	font-size: 5rem;
+	font-weight: 400;
+	color: var(--text-color);
+
+	max-height: 54.8rem;
+	padding: 4rem 0;
+}
+
+.greatCode {
+	text-shadow: -1px -1px 0 var(--button), 1px -1px 0 var(--button), -1px 1px 0 var(--button), 1px 1px 0 var(--button);
+	color: var(--backgrond);
+}
+
+.coffeImage {
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+}
+
+.bottomBlur {
+	position: fixed;
+	bottom: 0;
+}

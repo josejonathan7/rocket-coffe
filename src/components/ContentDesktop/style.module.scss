@@ -1,0 +1,42 @@
+:root {
+	--backgrond: #000;
+	--text-color: #FFF;
+	--button: #8257E5;
+	--border: #29292E;
+	--border-menu-mobile: #A8A8B3;
+	--text-color-menu-mobile: #E1E1E6;
+}
+
+.title {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	font-size: 8rem;
+	font-weight: 400;
+	color: var(--text-color);
+
+	max-height: 54.8rem;
+	padding-top: 4rem;
+}
+
+.greatCode {
+	text-shadow: -1px -1px 0 var(--button), 1px -1px 0 var(--button), -1px 1px 0 var(--button), 1px 1px 0 var(--button);
+	color: var(--backgrond);
+}
+
+.image {
+	max-height: 79.8rem;
+}
+
+.leftBlur {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+}
+
+.rightBlur {
+	position: fixed;
+	top: 0;
+	right: 0;
+}

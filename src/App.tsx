@@ -1,16 +1,49 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { HeaderDesktop, HeaderMobile, ContentDesktop, ContentMobile } from "./components";
 import style from "./style.module.scss";
 
 
 function App() {
+	const [ theMenuIsOpenMobile, setTheMenuIsOpenMobile ] = useState(false);
+	const [ screenWidth, setScreenWidth ] = useState(screen.width);
+
+	useEffect(() => setScreenWidth(screen.width), [screen.width]);
+
+	function handleMenusIsOpenMobile() {
+		setTheMenuIsOpenMobile(!theMenuIsOpenMobile);
+	}
+
+	console.log(screenWidth);
 
 	return (
 		<div className={style.container}>
 
-			<HeaderMobile />
+			{
+				screenWidth <= 480 ?
+					(
+						<>
+							<HeaderMobile
+								onChangeMenuIsOpen={handleMenusIsOpenMobile}
+								menuIsOpen={theMenuIsOpenMobile}
+							/>
 
-			<ContentMobile />
+							{
+								theMenuIsOpenMobile ? <></> : <ContentMobile />
+							}
+						</>
+					)
+					:
+					(
+						<>
+							<HeaderDesktop />
+							<ContentDesktop />
+						</>
+					)
+			}
+
+
+
+
 
 
 		</div>

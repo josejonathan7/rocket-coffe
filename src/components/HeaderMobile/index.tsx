@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import rocketMobileLogoImage from "../../assets/logo-mobile.svg";
 import menuBuguerOpenImage from "../../assets/menu-buguer-open.svg";
 import menuBuguerCloseImage from "../../assets/menu-buguer-close.svg";
@@ -6,10 +6,12 @@ import style from "./style.module.scss";
 
 const menuContents = ["Home", "Menu", "Recompensas", "Gift Cards", "Lojas"];
 
-export function HeaderMobile () {
-	const [ theMenuIsOpen, setTheMenuIsOpen ] = useState(true);
+interface Props {
+	onChangeMenuIsOpen: () => void;
+	menuIsOpen: boolean;
+}
 
-
+export function HeaderMobile ({ onChangeMenuIsOpen, menuIsOpen }: Props) {
 
 
 	return (
@@ -20,13 +22,13 @@ export function HeaderMobile () {
 				<img src={rocketMobileLogoImage} alt="logo da rocketseat" />
 
 				{
-					theMenuIsOpen ?
-						<button onClick={() => setTheMenuIsOpen(false)}>
+					menuIsOpen ?
+						<button onClick={() => onChangeMenuIsOpen()}>
 							<img src={menuBuguerCloseImage} alt="icone para fechar o menu" />
 						</button>
 
 						:
-						<button onClick={() => setTheMenuIsOpen(true)}>
+						<button onClick={() => onChangeMenuIsOpen()}>
 							<img src={menuBuguerOpenImage} alt="icone de menu hamburger" />
 						</button>
 
@@ -39,7 +41,7 @@ export function HeaderMobile () {
 			<hr className={style.hrLine} />
 
 			{
-				theMenuIsOpen ?
+				menuIsOpen ?
 					<ul className={style.ulList}>
 						{
 							menuContents.map((item, index) => (

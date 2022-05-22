@@ -13,8 +13,6 @@ function App() {
 		setTheMenuIsOpenMobile(!theMenuIsOpenMobile);
 	}
 
-	console.log(screenWidth);
-
 	return (
 		<div className={style.container}>
 

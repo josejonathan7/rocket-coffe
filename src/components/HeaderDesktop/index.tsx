@@ -7,8 +7,6 @@ const menuContents = ["Home", "Menu", "Recompensas", "Gift Cards", "Lojas"];
 
 export function HeaderDesktop () {
 
-
-
 	return (
 		<header className={style.container}>
 
@@ -16,15 +14,15 @@ export function HeaderDesktop () {
 
 			<nav className={style.nav}>
 				{
-					menuContents.map((item, index) => (
-						<button key={index}>
-							{item}
+					menuContents.map((text, index) => (
+						<button key={index} title={`ir para a página ${text}`}>
+							{text}
 						</button>
 					))
 				}
 			</nav>
 
-			<button className={style.button}>
+			<button className={style.button} title="não tem funcionalidade">
 				PEGAR MEU CAFÉ
 			</button>
 

@@ -29,7 +29,7 @@ export function HeaderMobile ({ onChangeMenuIsOpen, menuIsOpen }: Props) {
 
 						:
 						<button onClick={() => onChangeMenuIsOpen()}>
-							<img src={menuBuguerOpenImage} alt="icone de menu hamburger" />
+							<img src={menuBuguerOpenImage} alt="icone para abrir o menu hamburger" />
 						</button>
 
 				}
